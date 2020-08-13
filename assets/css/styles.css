@@ -14,7 +14,7 @@ body{
     font-family: "Roboto",sans-serif;
 }
 
-h1,h2,h3,h4,h5.h6{
+h1,h2,h3,h4,h5,h6{
     font-family: "Montserrat",sans-serif;
 }
 
@@ -62,7 +62,68 @@ nav ul li a:hover, nav ul li a:hover:active{
 }
 
 /* ---------------Game One CSS--------------*/
+.game-container{
+    display: flex;
+}
 
+.game1-board{
+    margin:50px auto;
+    padding:0;
+    width:800px;
+    height:800px;
+}
+.card div{
+    padding: 0;
+    margin: 0;
+}
+.card{
+    padding:0;
+    margin:0;
+    width:196px;
+    height:196px;
+    flex-wrap: wrap;
+    border:2px solid #C0CDC9;
+    display: inline-flex;
+    border-radius:10%;
+}
+
+.orange{
+    background-color: orange;
+}
+
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.pink{
+    background-color: pink;
+}
+
+.cyan{
+    background-color: cyan;
+}
+
+.green{
+    background-color: green
+    }
+
+.purple{
+    background-color: purple;
+}
+
+.tan{
+
+    background-color: tan;
+}
+
+.color-hidden{
+    background-color: #C0CDC9;
+    z-index: 999;
+}
 /*-------------Footer-------------*/
 .footer-container{
     display:flex;
@@ -77,7 +138,7 @@ nav ul li a:hover, nav ul li a:hover:active{
 .footer-item a{
     color:#000;
     font-size: 36px;
-    letter-spacing: 40px;
+    padding: 0px 20px;
     transition: all .5s ease-in-out;
 }
 
@@ -98,6 +159,7 @@ nav ul li a:hover, nav ul li a:hover:active{
     font-weight: 700;
     letter-spacing: normal;
     transition: all .5s ease-in-out;
+    padding:0px;
 }
 
 #footer-support-link:hover, #footer-support-link:hover:active{
