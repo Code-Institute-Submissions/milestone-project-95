@@ -1,6 +1,6 @@
-.row, .col{
- padding:0;
+.row, col, .container-fluid, .col-3{
  margin:0;
+ padding:0;
 }
 
 div{
@@ -9,10 +9,27 @@ div{
 }
 
 #logo{
-width:80%;
-height:60%;
+  width:90%;
+  height:90%;
+  padding:10px;
+  max-width:16em;
+  max-height:12em;
+  min-width:10em;
+  min-height: 6em;
+  margin: 0 auto;
+  background-color: #C0CDC9;
 }
 
 .header-container{
     align-items: center;
 }
+
+/*--------------Colours------------*/
+.light-grey-background{
+    background-color:#C0CDC9;
+}
+/*---------------Nav Bar--------------------*/
+nav ul li a{
+    color:#000;
+}
+/* ---------------Game One CSS--------------*/
