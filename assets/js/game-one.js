@@ -2,8 +2,12 @@ const colors = ["orange", "red", "blue", "pink", "cyan", "green", "purple", "bro
 let firstCard, secondCard;
 let firstClick,secondClick;
 let clickable = true;
+let scoreCounter = 0;
+let matchingPairs = 0;
+const winningScore = 8;
 
 let cards = $(".card");
+
 /*Loop that loops through our array of colours and selects a random card, removes that card so it cannot be selected again, and adds the class colour and sets the data attribute 
 of that card to be equal to the color*/
 function addBoardColors(){
@@ -58,20 +62,23 @@ function flipCard(){
     if(firstCard != undefined && secondCard != undefined){
         if(firstCard === secondCard){
              clickable = false;
-            console.log("cards are equal");
             $(`.${firstCard}`).off('click');
             $(`.${secondCard}`).off('click');
-           
+            scoreCounter += 1;
+            matchingPairs += 1;
             setTimeout(resetBoard,500);
             
         }
         else{
-            console.log("cards are not equal");
             clickable = false;
             setTimeout(notMatch, 500, firstCard, secondCard);
+            scoreCounter +=1;
         
         }
         
+    }
+    if(matchingPairs === winningScore){
+        alert("Congratulations you completed the game. It took you " + scoreCounter + " attempts to match all the pairs");
     }
 } 
 
@@ -80,3 +87,4 @@ addBoardColors();
 setTimeout(hideColors, 3000);
 
 $(".card").on("click",flipCard);
+
