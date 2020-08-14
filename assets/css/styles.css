@@ -165,3 +165,47 @@ nav ul li a:hover, nav ul li a:hover:active{
 #footer-support-link:hover, #footer-support-link:hover:active{
     color:#ffffff;
 }
+
+/*------------------Media Queries---------------*/
+
+@media only screen and (max-width:768px){
+    .game1-board{
+        width:400px;
+        height:400px;
+
+    }
+
+    .card{
+        width:96px;
+        height:96px;
+    }
+
+}
+
+@media only screen and (max-width:576px){
+    .game1-board{
+        width:360px;
+        height:360px;
+
+    }
+
+    .card{
+        width:86px;
+        height:88px;
+    }
+
+}
+
+@media only screen and (max-width:360px){
+    .game1-board{
+        width:320px;
+        height:320px;
+
+    }
+
+    .card{
+        width:76px;
+        height:76px;
+    }
+
+}
