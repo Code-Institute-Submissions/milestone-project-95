@@ -1,5 +1,7 @@
 const colors = ["orange", "red", "blue", "pink", "cyan", "green", "purple", "brown"];
 let firstCard, secondCard;
+let firstClick,secondClick;
+let clickable = true;
 
 let cards = $(".card");
 /*Loop that loops through our array of colours and selects a random card, removes that card so it cannot be selected again, and adds the class colour and sets the data attribute 
@@ -28,37 +30,48 @@ function hideColors(){
 function resetBoard(){
     firstCard = undefined;
     secondCard = undefined;
+    clickable = true;
+    console.log("reset board called");
 }
 
 function notMatch(card1, card2){
     $(`.${card1}`).addClass("color-neutral");
     $(`.${card2}`).addClass("color-neutral");
+    resetBoard();
 }
 
 function flipCard(){
-    if(firstCard === undefined){
+    if(clickable === false) return;
+    if(firstCard === undefined && secondCard === undefined){
         $(this).removeClass("color-neutral");
         firstCard = $(this).data("color");
+        firstClick = this;
+
         
     }
     else if(firstCard != undefined && secondCard === undefined ){
+        if(this === firstClick) return;
         $(this).removeClass("color-neutral");
         secondCard = $(this).data("color");
     }
 
     if(firstCard != undefined && secondCard != undefined){
         if(firstCard === secondCard){
-            console.log("It's a match")
+             clickable = false;
+            console.log("cards are equal");
             $(`.${firstCard}`).off('click');
             $(`.${secondCard}`).off('click');
-        }
-        else{
-            //$(`.${firstCard}`).addClass("color-neutral");
-            //$(`.${secondCard}`).addClass("color-neutral");
-            setTimeout(notMatch, 600, firstCard, secondCard);
+           
+            setTimeout(resetBoard,500);
             
         }
-        resetBoard();
+        else{
+            console.log("cards are not equal");
+            clickable = false;
+            setTimeout(notMatch, 500, firstCard, secondCard);
+        
+        }
+        
     }
 } 
 
