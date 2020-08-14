@@ -1,37 +1,69 @@
+const colors = ["orange", "red", "blue", "pink", "cyan", "green", "purple", "brown"];
+let firstCard, secondCard;
 
-//An array holding the different colors of for the game.
-const colors = ["orange", "red", "blue", "pink", "cyan", "green", "purple", "tan"];
-//Select cards as an array
-function getCards(cards){
-    let a = [];
-    for( let i = 0; i < cards.length; i++){
-        a.push(cards[i]);
-    }
-    return a;
-}
-
-function hideCards(cardsArray){
-    for(let card in cardsArray){
-        cardsArray[card].className += ` color-hidden`;
-    }
-}
-
-
-let cards = getCards($(".card"));
-
-setTimeout(hideCards,5000,getCards($(".card")));
-
-for( let color of colors){
-    //generate 2 random values between 0 and 15 to pick 2 cards 
-    let random1 = Math.floor(Math.random()*cards.length);
-    let cardA = cards[random1];
-    cards.splice(random1, 1);
-    cardA.className += ` ${color}`;
+let cards = $(".card");
+/*Loop that loops through our array of colours and selects a random card, removes that card so it cannot be selected again, and adds the class colour and sets the data attribute 
+of that card to be equal to the color*/
+function addBoardColors(){
+    for(let color of colors){
+   
+    let cardSelector1 = Math.floor(Math.random()*cards.length);
+    let card1 = cards[cardSelector1];
+    cards.splice(cardSelector1, 1);
+    card1.className += ` ${color}`;
+    card1.setAttribute('data-color',color);
         
-    let random2 = Math.floor(Math.random()*cards.length); 
-    let cardB = cards[random2];
-    cards.splice(random2, 1);
-    cardB.className += ` ${color}`;
+    let cardSelector2 = Math.floor(Math.random()*cards.length); 
+    let card2 = cards[cardSelector2];
+    cards.splice(cardSelector2, 1);
+    card2.className += ` ${color}`;
+    card2.setAttribute('data-color',color);
+    }
 }
 
+function hideColors(){
+    $(".card").addClass("color-neutral");
+}
 
+function resetBoard(){
+    firstCard = undefined;
+    secondCard = undefined;
+}
+
+function notMatch(card1, card2){
+    $(`.${card1}`).addClass("color-neutral");
+    $(`.${card2}`).addClass("color-neutral");
+}
+
+function flipCard(){
+    if(firstCard === undefined){
+        $(this).removeClass("color-neutral");
+        firstCard = $(this).data("color");
+        
+    }
+    else if(firstCard != undefined && secondCard === undefined ){
+        $(this).removeClass("color-neutral");
+        secondCard = $(this).data("color");
+    }
+
+    if(firstCard != undefined && secondCard != undefined){
+        if(firstCard === secondCard){
+            console.log("It's a match")
+            $(`.${firstCard}`).off('click');
+            $(`.${secondCard}`).off('click');
+        }
+        else{
+            //$(`.${firstCard}`).addClass("color-neutral");
+            //$(`.${secondCard}`).addClass("color-neutral");
+            setTimeout(notMatch, 600, firstCard, secondCard);
+            
+        }
+        resetBoard();
+    }
+} 
+
+addBoardColors();
+
+setTimeout(hideColors, 3000);
+
+$(".card").on("click",flipCard);

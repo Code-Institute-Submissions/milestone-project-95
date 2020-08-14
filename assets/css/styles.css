@@ -115,12 +115,12 @@ nav ul li a:hover, nav ul li a:hover:active{
     background-color: purple;
 }
 
-.tan{
+.brown{
 
-    background-color: tan;
+    background-color: brown;
 }
 
-.color-hidden{
+.color-neutral{
     background-color: #C0CDC9;
     z-index: 999;
 }
