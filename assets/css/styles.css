@@ -43,6 +43,10 @@ h1{
     letter-spacing: 3px;
     font-size:48px;
 }
+
+h2{
+    margin-top:30px;
+}
 /*---------------Nav Bar--------------------*/
 nav ul li a{
     color:#000;
@@ -62,6 +66,7 @@ nav ul li a:hover, nav ul li a:hover:active{
 }
 
 /*-------------Index Page----------------*/
+/*Hero Image*/
 .hero-container{
     display: flex;
     height:60vh;
@@ -90,8 +95,33 @@ nav ul li a:hover, nav ul li a:hover:active{
     font-weight: bold;
     z-index:9;
     font-size:26px;
+}
+/*Information Boxes*/
+.info-item{
+    margin-top:20px;
+    margin-bottom: 20px;
+    
+}
 
+.info-title-container{
+   border:1px solid #C0CDC9;
+   text-align: center;
+}
 
+.info-title-container i
+{
+    color:#9bd7f0;
+    padding-left:25px;
+}
+
+.para-container{
+    border:1px solid #C0CDC9;
+    height:200px;
+    text-align: center;
+}
+
+.hidden{
+    display: none;
 }
 /* ---------------Game One CSS--------------*/
 .game-container{
@@ -155,6 +185,13 @@ nav ul li a:hover, nav ul li a:hover:active{
 .color-neutral{
     background-color: #C0CDC9;
     z-index: 999;
+}
+
+/*-------------Line Breaks--------*/
+.title-hr{
+    border-bottom: 3px solid #C0CDC9;
+    width:220px;
+    margin-bottom: 20px;
 }
 /*-------------Footer-------------*/
 .footer-container{
