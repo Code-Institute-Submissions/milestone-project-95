@@ -223,6 +223,22 @@ nav ul li a:hover, nav ul li a:hover:active{
     z-index: 999;
 }
 
+/*------------Game Two CSS-------------*/
+
+.button-container{
+    width:30vl;
+    height:25vh;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.game-button{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+    background-color:red;
+}
+
 /*------------Suppport Page-------------*/
 .support-item{
     text-align: center;
