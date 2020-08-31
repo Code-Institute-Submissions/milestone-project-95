@@ -259,9 +259,20 @@ nav ul li a:hover, nav ul li a:hover:active{
 }
 
 .highlight{
-    background-blend-mode:luminosity;
+    border: 15px solid rgb(87, 82, 82);
+    box-shadow: inset 0px 0px 0px 0px red;
+    box-sizing: border-box; 
 }
 
+.highlight:after{
+    background-color:rgba(255, 255, 255, 0.25);
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    content: "";
+}
 /*------------Suppport Page-------------*/
 .support-item{
     text-align: center;
