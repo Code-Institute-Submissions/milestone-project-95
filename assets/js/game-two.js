@@ -87,6 +87,7 @@ function play(){
     colorsOrder = [];
     playerOrder = [];
     highlights = 0;
+    interval = 0;
     level = 1;
     $("#level").html(`Level: ${level}`);
     for(let i = 0; i < 50; i++){
@@ -95,7 +96,7 @@ function play(){
     displayColors = true;
     console.log(colorsOrder);
 
-    interval = setInterval(gameTurn,1000);
+    interval = setInterval(gameTurn,750);
     
 }
 
@@ -108,12 +109,13 @@ function gameTurn(){
         }
 
         if(displayColors == true){
-            highlightButton();
+            setTimeout(highlightButton, 200);
         }
 }
 
 
 function highlightButton(){
+    console.log("highlight button called");
     $((gameButtons[colorsOrder[highlights]])).addClass("highlight");
     setTimeout(function(){
          $((gameButtons[colorsOrder[highlights]])).removeClass("highlight");
@@ -186,6 +188,7 @@ $(orangeButton).on("click",function(){
 
 function check(){
     if(playerOrder[playerOrder.length-1] !== colorsOrder[playerOrder.length-1]){
+        game = false;
         lose();
     }
     else if(level == playerOrder.length){
@@ -194,11 +197,11 @@ function check(){
         displayColors = true;
         highlights = 0;
         $("#level").html(`Level: ${level}`);
-        interval = setInterval(gameTurn, 1000);
+        interval = setInterval(gameTurn, 750);
     }
 
 }
 function lose(){
-    alert(`you have lost, you got to level ${level} Please click the play button to reset the game`);
-    //play();
+    alert(`you have lost, you got to level ${level}. The game will automatically restart`);
+    play();
 }
