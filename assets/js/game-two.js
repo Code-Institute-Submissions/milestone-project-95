@@ -68,6 +68,7 @@ let game = false; //boolean to check if game is active or not
 let displayColors; //boolean that inidicates if colours are being highlighted, if not no player interaction
 let orderCorrect; //boolean to track if user is clicking the buttons in the correct order
 let interval; //variable to allow our interval to be cleared to reset board each turn
+let levelReached;
 
 const playButton = $("#play");
 const gameButtons = $(".game-button");
@@ -128,9 +129,9 @@ $(redButton).on("click",function(){
     if(game == true){
         playerOrder.push(0);
         check();
-        $(redButton).addClass("highlight");
+        $(redButton).addClass("highlight")
         setTimeout(function(){
-            $(redButton).removeClass("highlight");
+            $(redButton).removeClass("highlight")
         },500);
 
     }
@@ -202,6 +203,8 @@ function check(){
 
 }
 function lose(){
+    levelReached = level;
+    sessionStorage.setItem("gameTwoScore", levelReached);
     setTimeout(function(){
         alert(`you have lost, you got to level ${level}. The game will automatically restart`);
         play();

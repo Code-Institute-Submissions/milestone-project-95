@@ -1,10 +1,11 @@
 const colors = ["orange", "red", "blue", "pink", "cyan", "green", "purple", "brown"];
 let firstCard, secondCard;
 let firstClick,secondClick;
-let clickable = true;
+let clickable = false;
 let scoreCounter = 0;
 let matchingPairs = 0;
 const winningScore = 8;
+let finalScore;
 
 let cards = $(".card");
 
@@ -29,6 +30,10 @@ function addBoardColors(){
 
 function hideColors(){
     $(".card").addClass("color-neutral");
+}
+
+function showColors(){
+    $(".card").removeClass("color-neutral");
 }
 
 function resetBoard(){
@@ -79,12 +84,19 @@ function flipCard(){
     }
     if(matchingPairs === winningScore){
         alert("Congratulations you completed the game. It took you " + scoreCounter + " attempts to match all the pairs");
+        finalScore = scoreCounter; 
+        sessionStorage.setItem("gameOneScore",finalScore);
     }
 } 
 
 addBoardColors();
-
-setTimeout(hideColors, 3000);
-
+hideColors();
+$("#play-button").on("click", function(){
+    showColors();
+    setTimeout(function(){
+        hideColors();
+        clickable = true;
+    }, 3000);
+})
 $(".card").on("click",flipCard);
 
