@@ -199,6 +199,6 @@ function check(){
 
 }
 function lose(){
-    console.log(`you have lost, you got to level ${level}`);
-    play();
+    alert(`you have lost, you got to level ${level} Please click the play button to reset the game`);
+    //play();
 }
