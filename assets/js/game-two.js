@@ -63,9 +63,11 @@ $(".game-button").on("click", check);*/
 let colorsOrder = []; //array to store the order in which the colours flash.
 let playerOrder =[]; //array to store the order the player presses the buttons
 let level; //current length of colorsOrders
-let matches; //the number of matches the player has gotten correct in the current level
+let highlights; //tracks the number of times that the pc has highlighted a button
 let game = false; //boolean to check if game is active or not 
 let displayColors; //boolean that inidicates if colours are being highlighted, if not no player interaction
+let orderCorrect; //boolean to track if user is clicking the buttons in the correct order
+let interval; //variable to allow our interval to be cleared to reset board each turn
 
 const playButton = $("#play");
 const gameButtons = $(".game-button");
@@ -73,7 +75,9 @@ const redButton = $("#red-button");
 const blueButton = $("#blue-button");
 const greenButton = $("#green-button");
 const cyanButton = $("#cyan-button");
-const yellowButton = $("#yellow-button");
+const orangeButton = $("#orange-button");
+
+console.log(gameButtons[2]);
 
 $(playButton).on("click", function(){
     play();
@@ -82,19 +86,119 @@ $(playButton).on("click", function(){
 function play(){
     colorsOrder = [];
     playerOrder = [];
+    highlights = 0;
     level = 1;
     $("#level").html(`Level: ${level}`);
+    for(let i = 0; i < 50; i++){
+        colorsOrder.push(Math.floor(Math.random()*5));
+    }
+    displayColors = true;
+    console.log(colorsOrder);
+
+    interval = setInterval(gameTurn,1000);
+    
 }
 
 function gameTurn(){
+        game = false;
+        if(highlights == level){ //computer turn has done as it has the correct number of buttons has been highlighted
+            clearInterval(interval);
+            displayColors = false;
+            game = true;
+        }
 
+        if(displayColors == true){
+            highlightButton();
+        }
 }
 
 
 function highlightButton(){
-
+    $((gameButtons[colorsOrder[highlights]])).addClass("highlight");
+    setTimeout(function(){
+         $((gameButtons[colorsOrder[highlights]])).removeClass("highlight");
+         highlights++;
+    },500);
+    
 }
 
-function lose(){
+$(redButton).on("click",function(){
+    if(game == true){
+        playerOrder.push(0);
+        check();
+        $(redButton).addClass("highlight");
+        setTimeout(function(){
+            $(redButton).removeClass("highlight");
+        },500);
 
+    }
+})
+
+$(blueButton).on("click",function(){
+    if(game == true){
+        playerOrder.push(1);
+        check();
+        $(blueButton).addClass("highlight");
+        setTimeout(function(){
+            $(blueButton).removeClass("highlight");
+        },500);
+
+    }
+})
+
+$(greenButton).on("click",function(){
+    if(game == true){
+        playerOrder.push(2);
+        check();
+        $(greenButton).addClass("highlight");
+        setTimeout(function(){
+            $(greenButton).removeClass("highlight");
+        },500);
+
+    }
+})
+
+$(cyanButton).on("click",function(){
+    if(game == true){
+        playerOrder.push(3);
+        check();
+        $(cyanButton).addClass("highlight");
+        setTimeout(function(){
+            $(cyanButton).removeClass("highlight");
+        },500);
+
+    }
+})
+
+$(orangeButton).on("click",function(){
+    if(game == true){
+        playerOrder.push(4);
+        check();
+        $(orangeButton).addClass("highlight");
+        setTimeout(function(){
+            $(orangeButton).removeClass("highlight");
+        },500);
+
+    }
+})
+
+
+
+function check(){
+    if(playerOrder[playerOrder.length-1] !== colorsOrder[playerOrder.length-1]){
+        lose();
+    }
+    else if(level == playerOrder.length){
+        level++;
+        playerOrder = [];
+        displayColors = true;
+        highlights = 0;
+        $("#level").html(`Level: ${level}`);
+        interval = setInterval(gameTurn, 1000);
+    }
+
+}
+function lose(){
+    console.log(`you have lost, you got to level ${level}`);
+    play();
 }
