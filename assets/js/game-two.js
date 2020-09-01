@@ -1,4 +1,4 @@
-let colors = [];
+/*let colors = [];
 let click;
 let buttons = $("div.game-button");
 let game = false;
@@ -58,4 +58,43 @@ function check() {
   }
 }
 setTimeout(highlightNewButton, 1000);
-$(".game-button").on("click", check);
+$(".game-button").on("click", check);*/
+
+let colorsOrder = []; //array to store the order in which the colours flash.
+let playerOrder =[]; //array to store the order the player presses the buttons
+let level; //current length of colorsOrders
+let matches; //the number of matches the player has gotten correct in the current level
+let game = false; //boolean to check if game is active or not 
+let displayColors; //boolean that inidicates if colours are being highlighted, if not no player interaction
+
+const playButton = $("#play");
+const gameButtons = $(".game-button");
+const redButton = $("#red-button");
+const blueButton = $("#blue-button");
+const greenButton = $("#green-button");
+const cyanButton = $("#cyan-button");
+const yellowButton = $("#yellow-button");
+
+$(playButton).on("click", function(){
+    play();
+})
+
+function play(){
+    colorsOrder = [];
+    playerOrder = [];
+    level = 1;
+    $("#level").html(`Level: ${level}`);
+}
+
+function gameTurn(){
+
+}
+
+
+function highlightButton(){
+
+}
+
+function lose(){
+
+}
