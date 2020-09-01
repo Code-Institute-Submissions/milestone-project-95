@@ -1,3 +1,8 @@
+$(".support-heading").on("click", function(){
+    
+    $(".support-heading").siblings().addClass("hidden");
+    $(this).siblings().removeClass("hidden");
+})
 
         function initMap() {
             var map = new google.maps.Map(document.getElementById("map"), {
