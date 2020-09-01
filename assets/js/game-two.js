@@ -202,6 +202,9 @@ function check(){
 
 }
 function lose(){
-    alert(`you have lost, you got to level ${level}. The game will automatically restart`);
-    play();
+    setTimeout(function(){
+        alert(`you have lost, you got to level ${level}. The game will automatically restart`);
+        play();
+    },300);
+    
 }
