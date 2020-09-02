@@ -104,11 +104,28 @@ nav ul li a:hover:active {
   font-weight: bold;
   z-index: 9;
   font-size: 26px;
+  color:black;
 }
 .hero-text a {
-  color: #000;
+  color: red;
   font-weight: bold;
   text-transform: uppercase;
+}
+#call-to-action{
+    width:250px;
+    height:70px;
+    border-radius:20%;
+    font-size:22px;
+    font-weight:bold;
+    background-color:#c0cdc9;
+    color:black;
+    margin-top:20px;
+}
+
+#call-to-action:hover{
+    color:white;
+    cursor: pointer;
+    border:3px solid #185874;
 }
 /*Information Boxes*/
 .info-item {
@@ -119,6 +136,10 @@ nav ul li a:hover:active {
 .info-title-container {
   border: 1px solid #c0cdc9;
   text-align: center;
+}
+
+.info-title-container:hover{
+    cursor:pointer;
 }
 
 .info-title-container i {
@@ -357,6 +378,10 @@ nav ul li a:hover:active {
     border:1px solid #000;
 }
 
+.support-heading:hover{
+    cursor: pointer;
+}
+
 .support-img {
   width: inherit;
   height: 300px;
@@ -537,6 +562,10 @@ div#map {
     width: 100px;
     height: 100px;
   }
+
+  #call-to-action{
+      margin-top:5px;
+  }
   #cyan-button {
     margin-top: -30px;
   }
@@ -550,7 +579,7 @@ div#map {
 
   .hero-text {
     font-size: 18px;
-    top: 30%;
+    top: 10%;
   }
 
   .hero-container {
@@ -580,8 +609,15 @@ div#map {
     height: 76px;
   }
 
+  #call-to-action{
+      width:150px;
+      height:50px;
+      margin-top:0px;
+      font-size:16px;
+  }
+
   .hero-text {
     font-size: 16px;
-    top: 20%;
+    top: 5%;
   }
 }
