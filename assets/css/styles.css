@@ -539,6 +539,16 @@ div#map {
 }
 
 @media only screen and (max-width: 576px) {
+  .header-container{
+      position: fixed;
+      top:0;
+      z-index:9999;
+      width:100%;
+  }
+  
+  .hero-container{
+      margin-top: 96px; 
+  }
   .game1-board {
     width: 360px;
     height: 360px;
@@ -588,6 +598,21 @@ div#map {
   #hero-img {
     width: 100%;
   }
+  .memory-game-title{
+      margin-top:96px;
+  }
+
+  .support-type-container{
+      margin-top:96px;
+  }
+
+  .game-one-intro{
+      margin-top:96px;
+  }
+
+  .game-two-intro{
+      margin-top:96px;
+  }
 }
 
 @media only screen and (max-width: 360px) {
@@ -620,4 +645,20 @@ div#map {
     font-size: 16px;
     top: 5%;
   }
+  
+  .info-item h3{
+      font-size:18px;
+  }
+  .para-container p{
+      font-size:14px;
+  }
+
+  .support-button{
+      width:200px;
+      height:80px;
+  }
+  .support-txt-container p{
+      font-size:14px;
+  }
+
 }
