@@ -18,13 +18,15 @@ function addBoardColors(){
     let card1 = cards[cardSelector1];
     cards.splice(cardSelector1, 1);
     card1.className += ` ${color}`;
-    card1.setAttribute('data-color',color);
+    $(card1).data("color",color);
+   // console.log(`color: ${color}`);
+  //  console.log($(card1).data("color"));
         
     let cardSelector2 = Math.floor(Math.random()*cards.length); 
     let card2 = cards[cardSelector2];
     cards.splice(cardSelector2, 1);
     card2.className += ` ${color}`;
-    card2.setAttribute('data-color',color);
+    $(card2).data("color",color);
     }
 }
 
@@ -34,6 +36,13 @@ function hideColors(){
 
 function showColors(){
     $(".card").removeClass("color-neutral");
+}
+
+function removeColors(cards){
+    for(let i = 0; i < cards.length; i++){
+    let currentColor = ($(cards[i]).data("color"));
+    $(cards[i]).removeClass(currentColor).data("color","");
+    }
 }
 
 function resetBoard(){
@@ -67,6 +76,7 @@ function flipCard(){
     if(firstCard != undefined && secondCard != undefined){
         if(firstCard === secondCard){
              clickable = false;
+             console.log(`card 1: ${firstCard} card 2: ${secondCard}`);
             $(`.${firstCard}`).off('click');
             $(`.${secondCard}`).off('click');
             scoreCounter += 1;
@@ -75,6 +85,7 @@ function flipCard(){
             
         }
         else{
+            console.log(`card 1: ${firstCard} card 2: ${secondCard}`);
             clickable = false;
             setTimeout(notMatch, 500, firstCard, secondCard);
             scoreCounter +=1;
@@ -95,8 +106,20 @@ $("#play-button").on("click", function(){
     showColors();
     setTimeout(function(){
         hideColors();
-        clickable = true;
+        clickable=true;
+        $(".card").on("click",flipCard);
     }, 3000);
 })
-$(".card").on("click",flipCard);
+$("#reset-button").on("click",function(){
+    clickable = false;
+    cards = $(".card");
+    removeColors(cards);
+    matchingPairs = 0;
+    scoreCounter = 0;
+    console.log($(cards).data("color"));
+    addBoardColors();
+    hideColors();
+})
+
+
 
