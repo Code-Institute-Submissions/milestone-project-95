@@ -105,10 +105,10 @@ nav ul li a:hover:active {
   z-index: 9;
   font-size: 26px;
 }
-
 .hero-text a {
   color: #000;
   font-weight: bold;
+  text-transform: uppercase;
 }
 /*Information Boxes*/
 .info-item {
@@ -263,6 +263,17 @@ nav ul li a:hover:active {
   z-index: 999;
 }
 
+.afterword-container a{
+    font-weight:bold;
+    text-decoration: none;
+    color:black;
+
+}
+
+.afterword-container a:hover{
+    color:#c0cdc9;
+
+}
 /*------------Game Two CSS-------------*/
 
 .button-container {
@@ -283,6 +294,23 @@ nav ul li a:hover:active {
   box-shadow: 0px 3px 8px #990000, inset 0px 2px 3px #ff4c4c;
 }
 
+#play, #play-button{
+    width:80px;
+    height:40px;
+    background-color: #9bd7f0;
+    font-weight: bold;
+    border-radius: 20%;
+}
+
+#play:hover{
+    background-color:#c0cdc9
+
+}
+
+#level{
+    margin-top:30px;
+    font-size:32px;
+}
 
 #blue-button {
   background-color: blue;
@@ -347,6 +375,7 @@ nav ul li a:hover:active {
 
 div#map {
   min-height: 360px;
+  margin-bottom:20px;
 }
 /*-------------Line Breaks--------*/
 .title-hr {
@@ -439,6 +468,11 @@ div#map {
   .hero-text {
     font-size: 22px;
   }
+
+  .button-container{
+      width:250px;
+      height:250px;
+  }
   .hero-container {
     padding: 0;
     margin: 0;
@@ -458,6 +492,11 @@ div#map {
   .game1-board {
     width: 400px;
     height: 400px;
+  }
+
+  .button-container{
+      width:200px;
+      height:200px;
   }
 
   .card {
