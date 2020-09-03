@@ -125,7 +125,11 @@ function flipCard(){
         
     }
     if(matchingPairs === winningScore){
-        alert("Congratulations you completed the game. It took you " + scoreCounter + " attempts to match all the pairs");
+        $("#game-one-modal").removeClass("hidden");
+        $("#game-one-modal-txt").html("Congratulations you completed the game. It took you " + scoreCounter + " attempts to match all the pairs");
+        $(".close-btn").on("click", function(){
+            $("#game-one-modal").addClass("hidden");
+        });
         finalScore = scoreCounter; 
         sessionStorage.setItem("gameOneScore",finalScore);
         backgroundMusic = false; 

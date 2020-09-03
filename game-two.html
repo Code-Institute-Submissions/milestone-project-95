@@ -1,118 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Memory and Me</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images//favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Memory and Me</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images//favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
-	<link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
-	<script src="https://code.jquery.com/jquery-3.5.1.js"
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-</head>
-
-<body>
-	<header>
-		<div class="container-fluid">
-			<div class="row header-container light-grey-background">
-				<div class="col-3">
-					<a href="index.html"><img src="assets/images/logo.png" alt="Alzheimer Society Logo" id="logo"></a>
-				</div>
-                <div class="col-6">
-				<div class="d-none d-md-block text-center">
-					<h1>My Memory and Me</h1>
-                    </div>
-				</div>
-				<div class="col-3">
-					<nav class="navbar navbar-light navbar-expand-xl">
-						<button
-                    class="navbar-toggler ml-auto"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown"
-                    aria-expanded="false"
-                  >
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-						<div class="navbar-collapse collapse" id="navbarNavDropdown">
-							<ul class="list-inline">
-								<li class="list-inline-item"><a href="index.html">Home</a></li>
-								<li class="list-inline-item active"><a href="memory-tests.html">Memory Tests</a></li>
-								<li class="list-inline-item"><a href="support.html">Support</a></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</header>
-    <section>
-    <div class="container game-two-intro">
-    <div class="row">
-    <div class="col-12 game2-instructions text-center">
-        <h2>Game 2 - Instructions</h2>
-        <hr class="title-hr">
-        <p>This is another memory test. To play you simply need to remember the order the circles flash in and repeat the order. The objective is to get the highest score possible.
-            To begin the game please click the play button below.
-        </p> 
-        <button class="btn" id="play">Play</button><span id="game-two-sound"><i class="fas fa-volume-up"></i></span>
-        <p id="level"></p>
-    </div>
-    </div>
-    <div class="row">
-    <div class="col-4 button-container">
-    <div class="game-button" id="red-button" data-color="red" data-num="0"></div>
-    </div>
-    <div class="col-4 button-container">
-    <div class="game-button" id="blue-button" data-color="blue" data-num="1"></div>
-    </div>
-    <div class="col-4 button-container">
-    <div class="game-button" id="green-button" data-color="green" data-num="2"></div>
-    </div>
-    <div class=" offset-2 col-4 button-container">
-    <div class="game-button" id="cyan-button" data-color="cyan" data-num="3"></div>
-    </div>
-    <div class="col-4 button-container">
-    <div class="game-button" id="orange-button" data-color="orange" data-num="4"></div>
-    </div>
-    </div>
-    </div>
-    
-    </section>
-        <div class="container">
-        <div class="row">
-            <div class="col-12 afterword-container text-center">
-                <p>If you have completed both game 1 and game 2 and would like to get an overall result <br> for your short term memory please return to our <a href="memory-tests.html">memory tests</a> page.</p>
-                <p>If you still need to complete game 1 then please <a href="game-one.html">click here</a></p>
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="row header-container light-grey-background">
+          <div class="col-3">
+            <a href="index.html"
+              ><img
+                src="assets/images/logo.png"
+                alt="Alzheimer Society Logo"
+                id="logo"
+            /></a>
+          </div>
+          <div class="col-6">
+            <div class="d-none d-md-block text-center">
+              <h1>My Memory and Me</h1>
             </div>
+          </div>
+          <div class="col-3">
+            <nav class="navbar navbar-light navbar-expand-xl">
+              <button
+                class="navbar-toggler ml-auto"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-collapse collapse" id="navbarNavDropdown">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a href="index.html">Home</a>
+                  </li>
+                  <li class="list-inline-item active">
+                    <a href="memory-tests.html">Memory Tests</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="support.html">Support</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
         </div>
+      </div>
+    </header>
+    <section>
+      <div class="container game-two-intro">
+        <div class="row">
+          <div class="col-12 game2-instructions text-center">
+            <h2>Game 2 - Instructions</h2>
+            <hr class="title-hr" />
+            <p>
+              This is another memory test. To play you simply need to remember
+              the order the circles flash in and repeat the order. The objective
+              is to get the highest score possible. To begin the game please
+              click the play button below.
+            </p>
+            <button class="btn" id="play">Play</button
+            ><span id="game-two-sound"><i class="fas fa-volume-up"></i></span>
+            <p id="level"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 button-container">
+            <div
+              class="game-button"
+              id="red-button"
+              data-color="red"
+              data-num="0"
+            ></div>
+          </div>
+          <div class="col-4 button-container">
+            <div
+              class="game-button"
+              id="blue-button"
+              data-color="blue"
+              data-num="1"
+            ></div>
+          </div>
+          <div class="col-4 button-container">
+            <div
+              class="game-button"
+              id="green-button"
+              data-color="green"
+              data-num="2"
+            ></div>
+          </div>
+          <div class="offset-2 col-4 button-container">
+            <div
+              class="game-button"
+              id="cyan-button"
+              data-color="cyan"
+              data-num="3"
+            ></div>
+          </div>
+          <div class="col-4 button-container">
+            <div
+              class="game-button"
+              id="orange-button"
+              data-color="orange"
+              data-num="4"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="modal-box hidden" id="game-two-modal">
+      <div class="modal-header">
+        <h4>Game Two Results</h4>
+        <span class="close-btn">&times;</span>
+      </div>
+      <div class="modal-content">
+        <p id="game-two-modal-txt"></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 afterword-container text-center">
+          <p>
+            If you have completed both game 1 and game 2 and would like to get
+            an overall result <br />
+            for your short term memory please return to our
+            <a href="memory-tests.html">memory tests</a> page.
+          </p>
+          <p>
+            If you still need to complete game 1 then please
+            <a href="game-one.html">click here</a>
+          </p>
+        </div>
+      </div>
     </div>
 
-	<footer>
-		<div class="container-fluid">
-			<div class="row light-grey-background footer-container">
-				<div class="d-none d-lg-block text-center col-lg-4 footer-item">
-               <p> <i class="far fa-copyright"></i>All objects belong to My Memory and Me</p>
-                </div>
-				<div class="text-center col-12 col-md-6 col-lg-4 footer-item">
-                    <a href="https://twitter.com/explore" target="_blank"><i class="fab fa-twitter-square"></i></a>
-					<a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-					<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-				</div>
-				<div class="d-none d-md-block text-center col-md-6 col-lg-4 footer-item">
-                <p>If you feel you need additonal support with dementia <br>for either yourself or someone you know then please<br> visit our <a id="footer-support-link" href="support.html">support page</a></p> 
-				</div>
-			</div>
-		</div>
-	</footer>
-	<script src="assets/js/game-two.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-</body>
-
+    <footer>
+      <div class="container-fluid">
+        <div class="row light-grey-background footer-container">
+          <div class="d-none d-lg-block text-center col-lg-4 footer-item">
+            <p>
+              <i class="far fa-copyright"></i>All objects belong to My Memory
+              and Me
+            </p>
+          </div>
+          <div class="text-center col-12 col-md-6 col-lg-4 footer-item">
+            <a href="https://twitter.com/explore" target="_blank"
+              ><i class="fab fa-twitter-square"></i
+            ></a>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/" target="_blank"
+              ><i class="fab fa-facebook-square"></i
+            ></a>
+          </div>
+          <div
+            class="d-none d-md-block text-center col-md-6 col-lg-4 footer-item"
+          >
+            <p>
+              If you feel you need additonal support with dementia <br />for
+              either yourself or someone you know then please<br />
+              visit our
+              <a id="footer-support-link" href="support.html">support page</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/game-two.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

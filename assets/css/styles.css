@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Roboto:ital,wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
 
 .row,
 col,
@@ -456,7 +457,57 @@ div#map {
 #footer-support-link:hover:active {
   color: #ffffff;
 }
+/*----------------Modals-----------------*/
 
+.modal-box{
+    position: fixed;
+    z-index: 999;
+    margin-left:-200px;
+    margin-top:-100px;
+    width:400px;
+    height:200px;
+    top:50%;
+    left:50%;
+
+    background-color:#c0cdc9;
+    border:4px solid #185874;
+}
+
+.modal-content{
+    margin: 0 auto;
+    padding-top:40px;
+    width:100%;
+    height:75%;
+    background-color:#c0cdc9;
+    color:black;
+    text-align: center;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.modal-header{
+    border-bottom: 4px solid #185874;
+    width:100%;
+    height:25%;
+    text-align: right;
+    
+}
+.modal-header h4{
+    padding-left:55px;
+    margin-top:-5px;
+    font-weight: bold;
+}
+.close-btn{
+    margin-top:-20px;
+    color:black;
+    font-size:32px;
+    font-weight:bold;
+    
+}
+.close-btn:hover,.close-btn:active{
+    color:white;
+    cursor: pointer;
+}
 /*------------------Media Queries---------------*/
 @media only screen and (max-width: 2100px) {
   .hero-text {
@@ -516,6 +567,8 @@ div#map {
     width: 400px;
     height: 300px;
   }
+
+  
 }
 
 @media only screen and (max-width: 768px) {
@@ -541,6 +594,20 @@ div#map {
   #game-two-link{
       margin-top:0;
   }
+  .modal-box{
+      width:300px;
+      height:150px;
+      margin-top:-75px;
+      margin-left:-150px;
+  }
+  .modal-header h4{
+      padding-left:5px;
+      font-size:22px;
+      margin-top:-8px;
+}
+
+.modal-content{
+    font-size:14px;
 }
 
 @media only screen and (max-width: 576px) {

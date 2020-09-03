@@ -113,8 +113,11 @@ function lose(){
     levelReached = level;
     sessionStorage.setItem("gameTwoScore", levelReached);
     setTimeout(function(){
-        alert(`you have lost, you got to level ${level}. The game will automatically restart`);
-        play();
+        $("#game-two-modal").removeClass("hidden");
+        $("#game-two-modal-txt").html(`Well done you made it to level ${levelReached}! Click play to try again if you think you can improve your score!`);
+        $(".close-btn").on("click", function(){
+        $("#game-two-modal").addClass("hidden");
+        });
     },300);
     
 }

@@ -1,99 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Memory and Me</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images//favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Memory and Me</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images//favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
-	<link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
-	<script src="https://code.jquery.com/jquery-3.5.1.js"
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-</head>
-
-<body>
-	<header>
-		<div class="container-fluid">
-			<div class="row header-container light-grey-background">
-				<div class="col-3">
-					<a href="index.html"><img src="assets/images/logo.png" alt="Alzheimer Society Logo" id="logo"></a>
-				</div>
-                <div class="col-6">
-				<div class="d-none d-md-block text-center">
-					<h1>My Memory and Me</h1>
-                    </div>
-				</div>
-				<div class="col-3">
-					<nav class="navbar navbar-light navbar-expand-xl">
-						<button
-                    class="navbar-toggler ml-auto"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown"
-                    aria-expanded="false"
-                  >
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-						<div class="navbar-collapse collapse" id="navbarNavDropdown">
-							<ul class="list-inline">
-								<li class="list-inline-item"><a href="index.html">Home</a></li>
-								<li class="list-inline-item active"><a href="memory-tests.html">Memory Tests</a></li>
-								<li class="list-inline-item"><a href="support.html">Support</a></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</header>
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="row header-container light-grey-background">
+          <div class="col-3">
+            <a href="index.html"
+              ><img
+                src="assets/images/logo.png"
+                alt="Alzheimer Society Logo"
+                id="logo"
+            /></a>
+          </div>
+          <div class="col-6">
+            <div class="d-none d-md-block text-center">
+              <h1>My Memory and Me</h1>
+            </div>
+          </div>
+          <div class="col-3">
+            <nav class="navbar navbar-light navbar-expand-xl">
+              <button
+                class="navbar-toggler ml-auto"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-collapse collapse" id="navbarNavDropdown">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a href="index.html">Home</a>
+                  </li>
+                  <li class="list-inline-item active">
+                    <a href="memory-tests.html">Memory Tests</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="support.html">Support</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
     <section>
-    <div class="container">
-    <div class="row">
-    <div class="col-12 text-center memory-game-title">
-        <h2>Memory Games</h2>
-        <hr class="title-hr">
-        <p> Welcome to our Memory Games were you can test your current short-term memory funtion. To start either game one or two please click on the image of the game you wish to play. To see a overall result and a diagnosis on your short-term memory please click the results button.</p>
-    </div>
-    <div class="col-12 col-lg-6 text-center game-link-container">
-    <h3>Game One - Match the Squares</h3>
-    <a href="game-one.html"><img src="assets/images/game-one.PNG" class="memory-game-link" id="game-one-link"></a>
-    </div>
-    <div class="col-12 col-lg-6 text-center game-link-container">
-    <h3>Game Two - Copy the Pattern</h3>
-    <a href="game-two.html"><img src="assets/images/game-two.PNG" class="memory-game-link" id="game-two-link"></a>
-    </div>
-    <div class="col-12 text-center">
-    <button class="btn" id="results-button">Click here for your results</button>
-    </div>
-    </div>
-    </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center memory-game-title">
+            <h2>Memory Games</h2>
+            <hr class="title-hr" />
+            <p>
+              Welcome to our Memory Games were you can test your current
+              short-term memory funtion. To start either game one or two please
+              click on the image of the game you wish to play. To see a overall
+              result and a diagnosis on your short-term memory please click the
+              results button.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6 text-center game-link-container">
+            <h3>Game One - Match the Squares</h3>
+            <a href="game-one.html"
+              ><img
+                src="assets/images/game-one.PNG"
+                class="memory-game-link"
+                id="game-one-link"
+            /></a>
+          </div>
+          <div class="col-12 col-lg-6 text-center game-link-container">
+            <h3>Game Two - Copy the Pattern</h3>
+            <a href="game-two.html"
+              ><img
+                src="assets/images/game-two.PNG"
+                class="memory-game-link"
+                id="game-two-link"
+            /></a>
+          </div>
+          <div class="col-12 text-center">
+            <button class="btn" id="results-button">
+              Click here for your results
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
+    <div class="modal-box hidden" id="results-modal">
+      <div class="modal-header">
+        <h4>Overall Result</h4>
+        <span class="close-btn">&times;</span>
+      </div>
+      <div class="modal-content">
+        <p id="results-modal-txt"></p>
+      </div>
+    </div>
 
-	<footer>
-		<div class="container-fluid">
-			<div class="row light-grey-background footer-container">
-				<div class="d-none d-lg-block text-center col-lg-4 footer-item">
-               <p> <i class="far fa-copyright"></i>All objects belong to My Memory and Me</p>
-                </div>
-				<div class="text-center col-12 col-md-6 col-lg-4 footer-item">
-                    <a href="https://twitter.com/explore" target="_blank"><i class="fab fa-twitter-square"></i></a>
-					<a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-					<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-				</div>
-				<div class="d-none d-md-block text-center col-md-6 col-lg-4 footer-item">
-                <p>If you feel you need additonal support with dementia <br>for either yourself or someone you know then please<br> visit our <a id="footer-support-link" href="support.html">support page</a></p> 
-				</div>
-			</div>
-		</div>
-	</footer>
-	<script src="assets/js/memory-tests.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-</body>
-
+    <footer>
+      <div class="container-fluid">
+        <div class="row light-grey-background footer-container">
+          <div class="d-none d-lg-block text-center col-lg-4 footer-item">
+            <p>
+              <i class="far fa-copyright"></i>All objects belong to My Memory
+              and Me
+            </p>
+          </div>
+          <div class="text-center col-12 col-md-6 col-lg-4 footer-item">
+            <a href="https://twitter.com/explore" target="_blank"
+              ><i class="fab fa-twitter-square"></i
+            ></a>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/" target="_blank"
+              ><i class="fab fa-facebook-square"></i
+            ></a>
+          </div>
+          <div
+            class="d-none d-md-block text-center col-md-6 col-lg-4 footer-item"
+          >
+            <p>
+              If you feel you need additonal support with dementia <br />for
+              either yourself or someone you know then please<br />
+              visit our
+              <a id="footer-support-link" href="support.html">support page</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/memory-tests.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
