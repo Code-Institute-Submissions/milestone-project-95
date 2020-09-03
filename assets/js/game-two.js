@@ -8,6 +8,8 @@ let orderCorrect; //boolean to track if user is clicking the buttons in the corr
 let interval; //variable to allow our interval to be cleared to reset board each turn
 let levelReached;
 
+let playSounds = true;
+
 const playButton = $("#play");
 const gameButtons = $(".game-button");
 const redButton = $("#red-button");
@@ -54,7 +56,11 @@ function gameTurn(){
 
 
 function highlightButton(){
-    console.log("highlight button called");
+    if(playSounds == true){
+    let num1 = colorsOrder[highlights]+1;
+    let sound = new Audio(`assets/sounds/button-${num1}-sound.mp3`);
+    sound.play();
+    }
     $((gameButtons[colorsOrder[highlights]])).addClass("highlight");
     setTimeout(function(){
          $((gameButtons[colorsOrder[highlights]])).removeClass("highlight");
@@ -66,101 +72,25 @@ $(gameButtons).on("click",function(){
     //need to determine which button has been pushed
     if(game==true){
         let click = $(this);
-        
-        click.addClass("highlight");
-        setTimeout(function(){
-            console.log("highlight removed");
-            click.removeClass("highlight");
-            },500);
-
-        if($(click).data("color") == "red"){
-            playerOrder.push(0);
-            
+        let num1 = Number.parseInt($(this).data("num"));
+        for(let i = 0; i < gameButtons.length; i++){
+            if(num1 == i){
+                playerOrder.push(num1);
+                if(playSounds == true){
+                    num2 = num1 + 1;
+                    let noise = new Audio(`assets/sounds/button-${num2}-sound.mp3`);
+                    noise.play();
+                }
+                click.addClass("highlight");
+                setTimeout(function(){
+                console.log("highlight removed");
+                click.removeClass("highlight");
+                },500);
+            }
         }
-        if($(click).data("color") == "blue"){
-            playerOrder.push(1);
-            
-        }
-        if($(click).data("color") == "green"){
-            playerOrder.push(2);
-            
-        }
-        if($(click).data("color") == "cyan"){
-            playerOrder.push(3);
-            
-        }
-        if($(click).data("color") == "orange"){
-            playerOrder.push(4);
-            
-        }
-        //playerOrder.push(0,1,2,3,4 depending on which button was pressed)
-        check();
-        
+        check();    
     }
-
-})
-
-/*$(redButton).on("click",function(){
-    if(game == true){
-        playerOrder.push(0);
-        check();
-        $(redButton).addClass("highlight")
-        setTimeout(function(){
-            $(redButton).removeClass("highlight")
-        },500);
-
-    }
-})
-
-$(blueButton).on("click",function(){
-    if(game == true){
-        playerOrder.push(1);
-        check();
-        $(blueButton).addClass("highlight");
-        setTimeout(function(){
-            $(blueButton).removeClass("highlight");
-        },500);
-
-    }
-})
-
-$(greenButton).on("click",function(){
-    if(game == true){
-        playerOrder.push(2);
-        check();
-        $(greenButton).addClass("highlight");
-        setTimeout(function(){
-            $(greenButton).removeClass("highlight");
-        },500);
-
-    }
-})
-
-$(cyanButton).on("click",function(){
-    if(game == true){
-        playerOrder.push(3);
-        check();
-        $(cyanButton).addClass("highlight");
-        setTimeout(function(){
-            $(cyanButton).removeClass("highlight");
-        },500);
-
-    }
-})
-
-$(orangeButton).on("click",function(){
-    if(game == true){
-        playerOrder.push(4);
-        check();
-        $(orangeButton).addClass("highlight");
-        setTimeout(function(){
-            $(orangeButton).removeClass("highlight");
-        },500);
-
-    }
-})*/
-
-
+});
 
 function check(){
     if(playerOrder[playerOrder.length-1] !== colorsOrder[playerOrder.length-1]){
@@ -186,3 +116,19 @@ function lose(){
     },300);
     
 }
+
+$("#game-two-sound").on("click", function(){
+    
+    if(playSounds == true){
+        console.log("sounds: false");
+        playSounds = false;
+        $("#game-two-sound").empty().html(`<i class="fas fa-volume-mute"></i>`);
+        
+    }
+    else if(playSounds == false){
+        console.log("sounds: true");
+        playSounds = true;
+        $("#game-two-sound").empty().html(`<i class="fas fa-volume-up"></i>`);
+        
+    }
+})

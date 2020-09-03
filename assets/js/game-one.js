@@ -63,6 +63,7 @@ function music(){
     
     if(backgroundMusic == true){
         sound.play();
+        sound.loop = true;
         $("#game-one-sound").empty().html(`<i class="fas fa-volume-up"></i>`);
     }
     if(backgroundMusic == false){

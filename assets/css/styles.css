@@ -296,7 +296,7 @@ nav ul li a:hover:active {
 
 }
 
-#game-one-sound i{
+#game-one-sound i,#game-two-sound i{
     padding-left:20px;
     font-size:18px;
 }
