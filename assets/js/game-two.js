@@ -7,8 +7,13 @@ let displayColors; //boolean that inidicates if colours are being highlighted, i
 let orderCorrect; //boolean to track if user is clicking the buttons in the correct order
 let interval; //variable to allow our interval to be cleared to reset board each turn
 let levelReached;
-
 let playSounds = true;
+let soundOne = new Audio("assets/sounds/button-1-sound.mp3");
+let soundTwo = new Audio("assets/sounds/button-2-sound.mp3");
+let soundThree = new Audio("assets/sounds/button-3-sound.mp3");
+let soundFour = new Audio("assets/sounds/button-4-sound.mp3");
+let soundFive = new Audio("assets/sounds/button-5-sound.mp3");
+let sounds=[soundOne,soundTwo,soundThree,soundFour,soundFive];
 
 const playButton = $("#play");
 const gameButtons = $(".game-button");
@@ -57,9 +62,8 @@ function gameTurn(){
 
 function highlightButton(){
     if(playSounds == true){
-    let num1 = colorsOrder[highlights]+1;
-    let sound = new Audio(`assets/sounds/button-${num1}-sound.mp3`);
-    sound.play();
+    let num1 = colorsOrder[highlights];
+    sounds[num1].play();
     }
     $((gameButtons[colorsOrder[highlights]])).addClass("highlight");
     setTimeout(function(){
@@ -77,9 +81,7 @@ $(gameButtons).on("click",function(){
             if(num1 == i){
                 playerOrder.push(num1);
                 if(playSounds == true){
-                    num2 = num1 + 1;
-                    let noise = new Audio(`assets/sounds/button-${num2}-sound.mp3`);
-                    noise.play();
+                    sounds[num1].play();
                 }
                 click.addClass("highlight");
                 setTimeout(function(){
