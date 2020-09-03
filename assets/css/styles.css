@@ -295,6 +295,11 @@ nav ul li a:hover:active {
     color:#c0cdc9;
 
 }
+
+#game-one-sound i{
+    padding-left:20px;
+    font-size:18px;
+}
 /*------------Game Two CSS-------------*/
 
 .button-container {

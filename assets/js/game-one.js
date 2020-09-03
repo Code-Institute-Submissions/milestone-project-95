@@ -6,8 +6,9 @@ let scoreCounter = 0;
 let matchingPairs = 0;
 const winningScore = 8;
 let finalScore;
-
+let backgroundMusic = false;
 let cards = $(".card");
+let sound = new Audio("assets/sounds/game1-background.mp3");
 
 /*Loop that loops through our array of colours and selects a random card, removes that card so it cannot be selected again, and adds the class colour and sets the data attribute 
 of that card to be equal to the color*/
@@ -58,6 +59,35 @@ function notMatch(card1, card2){
     resetBoard();
 }
 
+function music(){
+    
+    if(backgroundMusic == true){
+        sound.play();
+        $("#game-one-sound").empty().html(`<i class="fas fa-volume-up"></i>`);
+    }
+    if(backgroundMusic == false){
+        sound.pause();
+        $("#game-one-sound").empty().html(`<i class="fas fa-volume-mute"></i>`);
+    }
+}
+
+$("#game-one-sound").on("click", function(){
+    if(backgroundMusic == true){
+        console.log("click sound = true");
+        backgroundMusic = false;
+        
+        music();
+        return;
+    }
+    if(backgroundMusic == false){
+        console.log("click sound = false");
+        backgroundMusic = true;
+        
+        music();
+        return;
+    }
+})
+
 function flipCard(){
     if(clickable === false) return;
     if(firstCard === undefined && secondCard === undefined){
@@ -97,6 +127,7 @@ function flipCard(){
         alert("Congratulations you completed the game. It took you " + scoreCounter + " attempts to match all the pairs");
         finalScore = scoreCounter; 
         sessionStorage.setItem("gameOneScore",finalScore);
+        backgroundMusic = false; 
     }
 } 
 
@@ -104,10 +135,12 @@ addBoardColors();
 hideColors();
 $("#play-button").on("click", function(){
     showColors();
+    backgroundMusic = true;
+    music();
     setTimeout(function(){
         hideColors();
         clickable=true;
-        $(".card").on("click",flipCard);
+        $(".card").on("click",flipCard);        
     }, 3000);
 })
 $("#reset-button").on("click",function(){
