@@ -1,65 +1,3 @@
-/*let colors = [];
-let click;
-let buttons = $("div.game-button");
-let game = false;
-let level = 0;
-let win = 0;
-let match = 0;
-
-function highlightNewButton() {
-  let selectButton = Math.floor(Math.random() * 5);
-  buttons[selectButton].classList.add("highlight");
-  setTimeout(function () {
-    buttons[selectButton].classList.remove("highlight");
-  }, 1000);
-  colors.push(buttons[selectButton].getAttribute("data-color"));
-}
-
-function highlightOldButtons() {
-  for (let i = 0; i < colors.length; i++) {
-    let color = colors[i];
-    console.log(color);
-    $(`div#${color}-button`).addClass("highlight");
-    setTimeout(function () {
-      $(`div#${color}-button`).removeClass("highlight");
-    }, 1000);
-  }
-}
-function startLevel() {
-  level++;
-  game = true;
-  setTimeout(highlightNewButton, 1000);
-}
-
-function resetGame() {}
-
-function check() {
-  startLevel();
-  while (game === true && level > win) {
-    for (i = 0; i < level; i++) {
-      colorCheck = colors[i];
-      click = $(this).data("color");
-      if (click === colorCheck) {
-        console.log("Win");
-        match++;
-        if(match < level){
-            setTimeout(highlightOldButtons,1000);
-        }
-        if (match === level) {
-          win = match;
-          match = 0;
-        }
-      } else {
-        console.log("Lose");
-        game = false;
-        colors = [];
-      }
-    }
-  }
-}
-setTimeout(highlightNewButton, 1000);
-$(".game-button").on("click", check);*/
-
 let colorsOrder = []; //array to store the order in which the colours flash.
 let playerOrder =[]; //array to store the order the player presses the buttons
 let level; //current length of colorsOrders
@@ -78,7 +16,7 @@ const greenButton = $("#green-button");
 const cyanButton = $("#cyan-button");
 const orangeButton = $("#orange-button");
 
-console.log(gameButtons[2]);
+
 
 $(playButton).on("click", function(){
     play();
@@ -97,7 +35,7 @@ function play(){
     displayColors = true;
     console.log(colorsOrder);
 
-    interval = setInterval(gameTurn,750);
+    interval = setInterval(gameTurn,1000);
     
 }
 
@@ -124,8 +62,45 @@ function highlightButton(){
     },500);
     
 }
+$(gameButtons).on("click",function(){
+    //need to determine which button has been pushed
+    if(game==true){
+        let click = $(this);
+        
+        click.addClass("highlight");
+        setTimeout(function(){
+            console.log("highlight removed");
+            click.removeClass("highlight");
+            },500);
 
-$(redButton).on("click",function(){
+        if($(click).data("color") == "red"){
+            playerOrder.push(0);
+            
+        }
+        if($(click).data("color") == "blue"){
+            playerOrder.push(1);
+            
+        }
+        if($(click).data("color") == "green"){
+            playerOrder.push(2);
+            
+        }
+        if($(click).data("color") == "cyan"){
+            playerOrder.push(3);
+            
+        }
+        if($(click).data("color") == "orange"){
+            playerOrder.push(4);
+            
+        }
+        //playerOrder.push(0,1,2,3,4 depending on which button was pressed)
+        check();
+        
+    }
+
+})
+
+/*$(redButton).on("click",function(){
     if(game == true){
         playerOrder.push(0);
         check();
@@ -183,7 +158,7 @@ $(orangeButton).on("click",function(){
         },500);
 
     }
-})
+})*/
 
 
 
@@ -198,7 +173,7 @@ function check(){
         displayColors = true;
         highlights = 0;
         $("#level").html(`Level: ${level}`);
-        interval = setInterval(gameTurn, 750);
+        interval = setInterval(gameTurn, 1000);
     }
 
 }
