@@ -420,7 +420,9 @@ nav ul li a:hover:active {
   width: inherit;
   border:1px solid #000;
 }
-
+.support-txt ul{
+    text-align: left;
+}
 div#map {
   min-height: 360px;
   margin-bottom:20px;
