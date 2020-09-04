@@ -148,12 +148,29 @@ nav ul li a:hover:active {
   padding-left: 25px;
 }
 
+.info-title-container h3{
+    font-size:25px;
+}
+
+.para-container ul span{
+    font-weight: bold;
+}
+
+.para-container h5{
+    text-align: left;
+}
+
 .para-container {
   border: 1px solid #c0cdc9;
   height: 200px;
   text-align: center;
+  overflow:scroll;
+  font-size:14px;
 }
 
+.para-container ul{
+    text-align: left;  
+}
 .hidden {
   display: none;
 }
