@@ -28,7 +28,7 @@ const orangeButton = $("#orange-button");
 $(playButton).on("click", function(){
     play();
 })
-
+//start the game, resets all arrays and numbers and stores the order the colors will flash in an array
 function play(){
     colorsOrder = [];
     playerOrder = [];
@@ -39,27 +39,26 @@ function play(){
     for(let i = 0; i < 50; i++){
         colorsOrder.push(Math.floor(Math.random()*5));
     }
-    displayColors = true;
-    console.log(colorsOrder);
+    displayColors = true; //computer will display colors so no user interaction
 
-    interval = setInterval(gameTurn,1000);
+    interval = setInterval(gameTurn,1000); //every second run the game turn function until interval is cleared 
     
 }
 
 function gameTurn(){
         game = false;
-        if(highlights == level){ //computer turn has done as it has the correct number of buttons has been highlighted
-            clearInterval(interval);
-            displayColors = false;
-            game = true;
+        if(highlights == level){ //computer turn has finished as it has the correct number of buttons has been highlighted
+            clearInterval(interval);//stop running GameTurn
+            displayColors = false;//stops computer turn
+            game = true;//game is active so users can interact
         }
 
         if(displayColors == true){
-            setTimeout(highlightButton, 200);
+            setTimeout(highlightButton, 200);//if game is active highlight button every 0.2s
         }
 }
 
-
+//plays button sound if sound enabled and adds highlight function to class, removing after 0.5s to give flashing style animation
 function highlightButton(){
     if(playSounds == true){
     let num1 = colorsOrder[highlights];
@@ -72,8 +71,8 @@ function highlightButton(){
     },500);
     
 }
+//function that highlights and plays sound of the button the user clicks
 $(gameButtons).on("click",function(){
-    //need to determine which button has been pushed
     if(game==true){
         let click = $(this);
         let num1 = Number.parseInt($(this).data("num"));
@@ -93,12 +92,13 @@ $(gameButtons).on("click",function(){
         check();    
     }
 });
-
+//checks to see if the button the user clicked was the correct button 
 function check(){
     if(playerOrder[playerOrder.length-1] !== colorsOrder[playerOrder.length-1]){
         game = false;
         lose();
     }
+    //if level is complete then prevent user interaction and allow computer to display colors. Run gameTurn every second
     else if(level == playerOrder.length){
         level++;
         playerOrder = [];
@@ -109,6 +109,7 @@ function check(){
     }
 
 }
+//display modal when the user looses
 function lose(){
     levelReached = level;
     sessionStorage.setItem("gameTwoScore", levelReached);
@@ -121,7 +122,7 @@ function lose(){
     },300);
     
 }
-
+//add option for users to mute game sounds
 $("#game-two-sound").on("click", function(){
     
     if(playSounds == true){
