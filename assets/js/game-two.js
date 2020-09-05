@@ -54,7 +54,7 @@ function gameTurn(){
         }
 
         if(displayColors == true){
-            setTimeout(highlightButton, 200);//if game is active highlight button every 0.2s
+            setTimeout(highlightButton, 200);//highlight button every 0.2s
         }
 }
 

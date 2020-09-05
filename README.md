@@ -30,14 +30,13 @@ A live demo of the site can be found [here](https://johngc1510.github.io/milesto
 
 ### **User Stories**
 1. As a new visitor I want the purpose of the website to be immediately clear
-2. As a new vistor I want to know what dementia is
+2. As a new vistor I want information on dementia
 3. As a new visitor I want to be able to test my memory
 4. As a new vistor I want to know support available to me
-5. As a new visitor I want to know what causes dementia
-6. As a new visitor I want to be able to enjoy the games
-7. As a new visitor I want the games to be easy to play
-8. As a new visitor I want to easily navigate the site
-9. As a new visitor I want the results of my test to be clear and obvious.
+5. As a new visitor I want to be able to enjoy the games
+6. As a new visitor I want the games to be easy to play
+7. As a new visitor I want to easily navigate the site
+8. As a new visitor I want the results of my test to be clear and obvious.
 
 ### **Design Choices**
 
@@ -125,12 +124,59 @@ This project used the languages HTML5, javascript and CSS3.
 - With CSS validator discovered missing } causing an error.
 - Using HTML5 validator on index.html I had nested a button inside an anchor - I fixed this issue by removing the button and styling the anchor as a button.
 ### **User Story Testing**
-
+1. As a new visitor I want the purpose of the website to be immediately clear
+    - Acheived - clear title and hero image with a call to action button that describes the funcition of the site
+2. As a new vistor I want to information on dementia
+    - Acheived - information very easy to access and clearly layed out on index page 
+3. As a new visitor I want to be able to test my memory:
+    - Acheived - Call to action button provides link to tests and on completion of both tests you can get an overall result
+4. As a new vistor I want to know support available to me
+    - Acheived - every page prompts you to visit the support page if you feel in need of seeing options for addiotnal support.
+5. As a new visitor I want to be able to enjoy the games
+    - Partially Achieved - the games run smoothly and game 1 has relaxing background music whilst playing and game 2 has colours alongside it's animations.
+        To imporve this I could imporve the visual apperance and animations in both game 1 and game 2. Adding a flip animation in game 1 and adding 3d effects
+        to the buttons would make clicking a button in both games more satisfying. 
+6. As a new visitor I want the games to be easy to play:
+    - Acheieved - The games are intuitive and suitable for the target audience
+7. As a new visitor I want to easily navigate the site:
+    - Acheived - fixed nav bar on mobiles and clear navigation throughout. Additonal prompts at the bottom of the game pages with links to either game or to go back and see your results.
+8. As a new visitor I want the results of my test to be clear and obvious.
+    - Partially Acheived - the reuslts button is obvious however the algorithm that calculates reuslts just gives a number, above zero being a resonable score and below zero performing 
+    poorly. I could try and convert my algorithm to give a grade or convert the score to something out of 10 to give a more familiar score rather than a meaningless number. The text tells
+    with the alert clearly tells you how you have performed.
 
 ### **Manual Testing**   
-
-
-
+- I extensivley tested the layout across multiple devices: On a 4k monitor, a HD monitor, 15.4inch laptop, an Ipad, a Huwawei P30 Pro, Google Pixel 3, Google Pixel 3XL and on a chromebook. 
+#### **Game One**
+I tested game one in a large number of ways to attempt to break it:
+- I first could complete the game by clicking on the same tile twice which gave a successful outcome so the entire game could be completed without matching tiles. This was fixed by adding 
+     if(this === firstClick) return; when the firstClick was defined and secondClick had yet to be defined. 
+- You could initally click the cards before the baord had flipped to neutral to get a head-start. Using the clickable booelan and only setting this true to when the board flipped prevented users 
+    from clicking when they could see the colours.
+- The game could be broken by exceptionally fast clicking between cards, I fixed this issue by adding a time delay to when you can click again after the two cards have been clicked using the setTimeout method.<br><br>
+My inital attempt to add a reset button to the board by recalling the addBoardColors() function broke the game in multiple ways:
+1. If you had succesfully paired cards in the previous game they were unclickable in the next game.
+2. When the function was called the board had 3 or 4 cards of the same colors and could be entirely missing 1 color.
+3. I did not orgininally reset the winning score counter so the game could be completed without fully matching the reset board.
+ 
+ - Problem 1 was solved by ensuring that I reset the card array at the start of the fucntion as some would have been removed upon successful pairing.
+ - Problem 2 was caused as the cards still had a data-color and a color class from the first call of addBoardColors(), so some cards had multiple color classes
+   which were being called in order preference whilst cards that had been successfully paired had a single color class that could have been a color in the previous game, 
+   allowing for a maximum fo 4 cards of the same color. I sovled this by adding a function to clear data-color and clear the cards color class when resetting so calling
+   addBoardColors() happened to cards with empty data attributes and color classes. 
+ - Problem 3 was easily solved by resetting the variable matched-pairs = 0;
+ #### **Game Two**
+ In my intial attempts at the game I tried to make everything dynamic, I randomly generated a single color which the computer then highlighted and stored that value in array. The user would then 
+ be able to click on the highlighted button. I then tried to create a function that highlighted old colors before highlighting a new random color and adding this to the array which the user had to 
+ match. The issue I had with this was I did not run the funciton using a set interval, I attempted to use multiple timeout functions which ended up colours flashing inconsistently and often during 
+ a users turn. Setting and clearing an interval when the computer turn was done solved this issue. I also generated the full order that the computer would highlight the buttons before the game 
+ started playing, dynamically updating used while(hightlight < level){gameTurn} which can result in a infnite loop if the user never fails or the program is played by a bot. <br><br>
+ When initially adding sound to game Two I used a function that created a audio file dynamically each time I wanted to play the sound. See image below. <br>
+ <img src="assets/images/gameTwoTest.png" alt="image of a test for game 2" width="500px" stlye="margin:40px 20px;text-align:left;"><br>
+ This dynamic audio caused a lag between the highlight animation and the sound, this was fixed by preloading the sounds storing them in an array and choosing the appropriate sound from an array.<br><br>
+ There was initially a bug where, if you lost the game, the alert would display and when you closed the alert the final color from your previous game would flash. This could easily cause confusion as
+ the user would see two highlights for the first level, the first happening very quickly from the previous game. I intially solved this by adding a timeout when you lose of 300ms to allow the 200ms 
+ flash to occur however I improved on this when adding a play button so the game would not restart upon a loss; only when hitting the play button. 
 ## Deployment
 ---
 The site is hosted usig GitHub and has been deployed directly from the master branch. The master branch was the only branch used for this website. I deployed the site by:
@@ -142,15 +188,16 @@ The site is hosted usig GitHub and has been deployed directly from the master br
 ---
 ### **Code**
 - [Bootstrap 4](https://getbootstrap.com/): Bootstrap library used throughout main project - used the cards template, the grid system, modals and the default slider with custom css.
-- [Embedded Google Map](https://mdbootstrap.com/docs/jquery/javascript/google-maps/): Copied the code from this link to embedd the google map on my about-us page.
-- [Dulled Slider Image](https://stackoverflow.com/questions/44463690/darkening-a-background-image-on-a-bootstrap-carousel) Used this thread to find the solution of how to add a transparent background to my slider for text contrast.
-- The code institue mini projects for the resume and the whiksey project were also referenced on occasions
+- Used the UDX resume lesson from Code Institue to assist with embedding the google map using the maps API.
+- [jQuery](https://jquery.com/) - Used jQuery library to assist with javascript.
+- [Simon Game Tutorial](https://www.youtube.com/watch?v=n_ec3eowFLQ&t=2185s&ab_channel=freeCodeCamp.org) - This tutorial gave me the idea to use a boolean to seperate the comupter turns from the user turns as well as assigning the interval to
+a variable to allow me to clear it to stop the computer turn from continuing. 
+- [Memory Game Tutorial](https://www.youtube.com/watch?v=bbb9dZotsOc&t=1266s&ab_channel=WebDevJunkie) - I was struggling to randomize by board without having colors appear more than twice or having a card targeted more than once, splicing the 
+card out of the card array to stop it being targeted twice was taken from this tutorial.
 
 ### **Media**
-- All background images taken from [unsplash](https://unsplash.com/s/photos/gym)
-- Images of celebreties and people taken from respective wikipedia pages
-- Gym logo used taken from [Gold's Gym](https://www.goldsgym.com/) - I own no rights to this image. 
+- Images taken from appropriate google image searches - I own no right to any images used.
 
 ### **Acknowledgements**
-- My mentor Anthony Montaro for his fantastic support and assistance
+- My mentor Anthony Montaro for his fantastic support and assistance.
 - The slack community for their continued support
