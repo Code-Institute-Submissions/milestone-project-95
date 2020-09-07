@@ -528,6 +528,11 @@ div#map {
     margin-top:-5px;
     font-weight: bold;
 }
+
+#results-modal .modal-header h4{
+    padding-left:75px;
+}
+
 .close-btn{
     margin-top:-20px;
     color:black;

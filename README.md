@@ -178,11 +178,12 @@ My inital attempt to add a reset button to the board by recalling the addBoardCo
  There was initially a bug where, if you lost the game, the alert would display and when you closed the alert the final color from your previous game would flash. This could easily cause confusion as
  the user would see two highlights for the first level, the first happening very quickly from the previous game. I intially solved this by adding a timeout when you lose of 300ms to allow the 200ms 
  flash to occur however I improved on this when adding a play button so the game would not restart upon a loss; only when hitting the play button. 
+
 ## Deployment
 ---
 The site is hosted usig GitHub and has been deployed directly from the master branch. The master branch was the only branch used for this website. I deployed the site by:
 1. On GitHuB navigating to my sites repositroy.
-2. Whilst in the first-milestone-project repositroy click on settings.
+2. Whilst in the seoncd-milestone-project repositroy click on settings.
 3. Scroll down until you come to the "source" drop-down menu and select master branch as the publishing source.
 
 ## Credits
@@ -195,6 +196,7 @@ The site is hosted usig GitHub and has been deployed directly from the master br
 a variable to allow me to clear it to stop the computer turn from continuing. 
 - [Memory Game Tutorial](https://www.youtube.com/watch?v=bbb9dZotsOc&t=1266s&ab_channel=WebDevJunkie) - I was struggling to randomize by board without having colors appear more than twice or having a card targeted more than once, splicing the 
 card out of the card array to stop it being targeted twice was taken from this tutorial.
+- [Map Info Box Solution](https://leewc.com/articles/google-maps-infowindow/) - When creating the info boxes for my google maps I was only able to make a single infobox shown from the final item in my array. I found the solution to this issue here. 
 
 ### **Media**
 - Images taken from appropriate google image searches - I own no right to any images used.

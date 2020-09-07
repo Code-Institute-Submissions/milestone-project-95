@@ -34,7 +34,8 @@ $("#results-button").on("click", function(){
           
          } else{
         $("#results-modal").removeClass("hidden");
-        $("#results-modal-txt").html(`Our algorithm gives you a total score of ${result}, these results inidcate you may have short-term memory issues and should seeek support.
+        $("#results-modal .modal-content").css("padding-top","0px");
+        $("#results-modal-txt").html(`Our algorithm gives you a total score of ${result}, these results inidcate you may have short-term memory issues and should seek support.
              Please check our support page to see options available to you`);
         $(".close-btn").on("click", function(){
         $("#results-modal").addClass("hidden");
