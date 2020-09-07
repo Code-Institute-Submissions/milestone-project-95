@@ -19,6 +19,7 @@ const gameButtons = $(".game-button");
 
 $(playButton).on("click", function () {
   play();
+  
 });
 //start the game, resets all arrays and numbers and stores the order the colors will flash in an array
 function play() {
@@ -33,13 +34,13 @@ function play() {
     colorsOrder.push(Math.floor(Math.random() * 5));
   }
   displayColors = true; //computer will display colors so no user interaction
-
+  $(playButton).off("click").addClass("light-grey-background").removeClass("light-blue-background");
   interval = setInterval(gameTurn, 1000); //every second run the game turn function until interval is cleared
 }
 
 function gameTurn() {
   game = false;
-  $(playButton).off("click");
+  
   if (highlights == level) {
     //computer turn has finished as it has the correct number of buttons has been highlighted
     clearInterval(interval); //stop running GameTurn
@@ -107,6 +108,7 @@ function check() {
 function lose() {
   game = false;
   levelReached = level;
+  $(playButton).addClass("light-blue-background");
   $(playButton).on("click", function () {
   play();
 });

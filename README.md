@@ -200,9 +200,10 @@ My inital attempt to add a reset button to the board by recalling the addBoardCo
  There was initially a bug where, if you lost the game, the alert would display and when you closed the alert the final color from your previous game would flash. This could easily cause confusion as
  the user would see two highlights for the first level, the first happening very quickly from the previous game. I intially solved this by adding a timeout when you lose of 300ms to allow the 200ms 
  flash to occur however I improved on this when adding a play button so the game would not restart upon a loss; only when hitting the play button. <br><br>
- I found a bug in game 2 where if you clicke the play button again in the middle of a computer turn then it caused the game to bug out and the game would move to level 1 with multiple circles higlighting. To prevent 
+ I found a bug in game 2 where if you clicked the play button again in the middle of a computer turn then it caused the game to bug out and the game would move to level 1 with multiple circles higlighting. To prevent 
  users doing this I removed the click event from the play button during the middle of the game, the click event is restored upon loss allowing players to restart the game. This is not an ideal solution as players can 
- no longer restart the game half way through it however I was unable to find the underlying cause of this bug. 
+ no longer restart the game half way through it however I was unable to find the underlying cause of this bug. To try and make this solution clearer to the users I ensured that the play button remains grey looking '
+ not clickable' whilst the game is in porgress.
 
 ## Deployment
 ---
