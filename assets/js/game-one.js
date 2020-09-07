@@ -1,6 +1,6 @@
 const colors = ["orange", "red", "blue", "pink", "cyan", "green", "purple", "brown"];
 let firstCard, secondCard;
-let firstClick,secondClick;
+let firstClick;
 let clickable = false;
 let scoreCounter = 0;
 let matchingPairs = 0;
@@ -137,7 +137,7 @@ $("#play-button").on("click", function(){
         clickable=true;
         $(".card").on("click",flipCard);        
     }, 3000);
-})
+});
 //buttn to reset game
 $("#reset-button").on("click",function(){
     clickable = false;
@@ -147,7 +147,7 @@ $("#reset-button").on("click",function(){
     scoreCounter = 0;
     addBoardColors();
     hideColors();
-})
+});
 
 
 

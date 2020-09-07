@@ -4,7 +4,6 @@ let level; //current length of colorsOrders
 let highlights; //tracks the number of times that the pc has highlighted a button
 let game = false; //boolean to check if game is active or not 
 let displayColors; //boolean that inidicates if colours are being highlighted, if not no player interaction
-let orderCorrect; //boolean to track if user is clicking the buttons in the correct order
 let interval; //variable to allow our interval to be cleared to reset board each turn
 let levelReached;
 let playSounds = true;
@@ -17,11 +16,7 @@ let sounds=[soundOne,soundTwo,soundThree,soundFour,soundFive];
 
 const playButton = $("#play");
 const gameButtons = $(".game-button");
-const redButton = $("#red-button");
-const blueButton = $("#blue-button");
-const greenButton = $("#green-button");
-const cyanButton = $("#cyan-button");
-const orangeButton = $("#orange-button");
+
 
 
 
