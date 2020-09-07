@@ -84,7 +84,6 @@ $(gameButtons).on("click",function(){
                 }
                 click.addClass("highlight");
                 setTimeout(function(){
-                console.log("highlight removed");
                 click.removeClass("highlight");
                 },500);
             }
@@ -126,13 +125,11 @@ function lose(){
 $("#game-two-sound").on("click", function(){
     
     if(playSounds == true){
-        console.log("sounds: false");
         playSounds = false;
         $("#game-two-sound").empty().html(`<i class="fas fa-volume-mute"></i>`);
         
     }
-    else if(playSounds == false){
-        console.log("sounds: true");
+    else if(playSounds == false){   
         playSounds = true;
         $("#game-two-sound").empty().html(`<i class="fas fa-volume-up"></i>`);
         

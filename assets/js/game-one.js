@@ -71,13 +71,11 @@ function music(){
 //add click to function to sound icon to turn music on and off
 $("#game-one-sound").on("click", function(){
     if(backgroundMusic == true){
-        console.log("click sound = true");
         backgroundMusic = false;
         music();
         
     }
     else if(backgroundMusic == false){
-        console.log("click sound = false");
         backgroundMusic = true;
         music();
     }
@@ -147,7 +145,6 @@ $("#reset-button").on("click",function(){
     removeColors(cards);
     matchingPairs = 0;
     scoreCounter = 0;
-    console.log($(cards).data("color"));
     addBoardColors();
     hideColors();
 })

@@ -115,5 +115,3 @@ function initMap() {
 });
 
 }
-
-console.log($(".support-img-item").height());
