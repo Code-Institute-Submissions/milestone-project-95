@@ -147,6 +147,7 @@ This project used the languages HTML5, javascript and CSS3.
 
 ### **Manual Testing**   
 - I extensivley tested the layout across multiple devices: On a 4k monitor, a HD monitor, 15.4inch laptop, an Ipad, a Huwawei P30 Pro, Google Pixel 3, Google Pixel 3XL and on a chromebook. 
+- I tested the site on multiple browser including Chrome, Microsoft Edge and Firefox.
 #### **Game One**
 I tested game one in a large number of ways to attempt to break it:
 - I first could complete the game by clicking on the same tile twice which gave a successful outcome so the entire game could be completed without matching tiles. This was fixed by adding 
