@@ -1,26 +1,26 @@
 # My Memory and Me
 The objective of this website is to provide an informative website for those who are worried they may be suffering from dementia or for individuals who suspect a family member/friend is suffering from dementia. 
-The website provides a brief insight into what dementia is, what can cause dementia, how dementia is diagnosed and possible dementia treatments available. The main funciton of the site is designed towards 
-individuals worried they might have dementia and be strugggling with short memory issues. The site has 2 games desinged to test memory and an alogrithm that gives you a feedback on your short-term memory
-based on these games. Hence the main aim of this site is:
+The website provides a brief insight into what dementia is, what can cause dementia, how dementia is diagnosed and possible dementia treatments available. The main function of the site is designed towards 
+individuals worried they might have dementia and be struggling with short memory issues. The site has 2 games designed to test memory and an algorithm that gives you a feedback on your short-term memory
+based on these games. Hence, the main aim of this site is:
 
 - To inform others about dementia
 - To help with early diagnosis of dementia using memory games
 - To provide information of the available support for dementia sufferer
 
-The site is intented to have a simple easy to navigate design as the target audience will be the older members of the population as they are much more likely to suffer from dementia.
+The site is intended to have a simple easy to navigate design as the target audience will be the older members of the population as they are much more likely to suffer from dementia.
 
 A live demo of the site can be found [here](https://johngc1510.github.io/milestone-project-2/)
 
 ### **Business Goals**
 - To accurately inform others about dementia 
 - To have a platform which can help spot early signs of dementia
-- To imporve peoples awareness of the different types of support available to those suffering from dementia
+- To improve peoples awareness of the different types of support available to those suffering from dementia
 
 ### **Customer Goals**
 - To obtain information about dementia
 - To test their short term memory 
-- To find local support/suport options if currently suffering from dementia
+- To find local support options if currently suffering from dementia
 ## UX
 ---
 ### **Ideal User**
@@ -30,9 +30,9 @@ A live demo of the site can be found [here](https://johngc1510.github.io/milesto
 
 ### **User Stories**
 1. As a new visitor I want the purpose of the website to be immediately clear
-2. As a new vistor I want information on dementia
+2. As a new visitor I want information on dementia
 3. As a new visitor I want to be able to test my memory
-4. As a new vistor I want to know support available to me
+4. As a new visitor I want to know support available to me
 5. As a new visitor I want to be able to enjoy the games
 6. As a new visitor I want the games to be easy to play
 7. As a new visitor I want to easily navigate the site
@@ -44,7 +44,7 @@ A live demo of the site can be found [here](https://johngc1510.github.io/milesto
  I used Montserrat for the headings and Roboto for the body as I beleive this looked professional and was clear and easy to read.
 
 #### **Icons**
-I used Font Awesome icons for my social media links and for my download icon as it gives a intuitive way for users to access the sites social media. I also used Font Awesome icons to make my drop down and mute buttons 
+I used Font Awesome icons for my social media links as it gives a intuitive way for users to access the sites social media. I also used Font Awesome icons to make my drop down and mute buttons 
 more intuitive to users. 
 
 #### **Colors**
@@ -56,7 +56,7 @@ I wanted the hero image to fit the theme of the site and believe it does lead yo
 is the sites primary focus. 
 
 #### **About Dementia section**
-I wanted the site to be informative as well as providing a simple way to test your memory. I used drop down boxes to contain the infomration as it keeps the site looking neat and does not overwhelm with the volume of text.
+I wanted the site to be informative as well as providing a simple way to test your memory. I used drop down boxes to contain the information as it keeps the site looking neat and does not overwhelm with the volume of text.
 There is a lot of information available within the drop-down boxes and by having it contained within the boxes I beleive it to be more user friendly and less intimidating than scrolling down and seeing 6 large blocks of text.
 
 #### **Memory Tests Page**
@@ -98,7 +98,7 @@ in the major cities in the UK.
 ### **Differences from wireframes**
 - I initially wanted to have both games embedded on the memory games page but on desktop it meant the games had to be too small and could have lead to issues with users clicking between games so made both the games on 
 a seperate page and just linked to them from the memory games page.
-- I swapped the map and the support information on the support page as it is more intutive to have information about support then lcoations you can receive support. 
+- I swapped the map and the support information on the support page as it is more intuitive to have information about support followed by locations that you can receive support. 
 
 ### **Features left to implement**
 - To add better 3-d effects to my buttons in game 2 and add a flattening animation when you click on the button to give a feeling of actually pressing a button. 
@@ -198,7 +198,7 @@ card out of the card array to stop it being targeted twice was taken from this t
 ### **Media**
 - Images taken from appropriate google image searches - I own no right to any images used.
 
-### **infomration**
+### **Infomration**
 - All information on dementia was taken from the [Alzheimers Scoiety](https://www.alzheimers.org.uk/about-dementia/types-dementia/what-dementia).
 
 ### **Acknowledgements**
