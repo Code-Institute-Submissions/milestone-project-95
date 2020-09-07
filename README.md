@@ -200,7 +200,7 @@ card out of the card array to stop it being targeted twice was taken from this t
 
 ### **infomration**
 - All information on dementia was taken from the [Alzheimers Scoiety](https://www.alzheimers.org.uk/about-dementia/types-dementia/what-dementia).
-]
+
 ### **Acknowledgements**
 - My mentor Anthony Montaro for his fantastic support and assistance.
-- The slack community for their continued support, in particular JimLynx for his helpful troubleshooting
+- The slack community for their continued support, in particular JimLynx for his helpful troubleshooting my design. 
