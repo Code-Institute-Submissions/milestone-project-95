@@ -102,6 +102,7 @@ function check() {
 }
 //display modal when the user looses
 function lose() {
+  game = false;
   levelReached = level;
   sessionStorage.setItem("gameTwoScore", levelReached);
   setTimeout(function () {
