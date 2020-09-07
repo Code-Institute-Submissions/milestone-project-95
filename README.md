@@ -21,6 +21,15 @@ A live demo of the site can be found [here](https://johngc1510.github.io/milesto
 - To obtain information about dementia
 - To test their short term memory 
 - To find local support options if currently suffering from dementia
+
+## Table of Contents
+1. [User Design](#ux)
+2. [WireFrames](#wireframes)
+3. [Features](#features)
+4. [Technologies](#technologies-used)
+5. [Testing](#testing)
+6. [Deployment](#deployment)
+7. [Credits](#credits)
 ## UX
 ---
 ### **Ideal User**
@@ -91,15 +100,28 @@ in the major cities in the UK.
 ---
 ### **Existing Feautres**
 - The website is responsive on all device sizes.
-- Both game 1 and 2 are fully functional and allow you to mute sound if wanted.
+#### Game One and Two
+- Both game 1 and 2 are fully functional and allow you to mute sound if wanted. Game 1 allows you to reset the game mid-game and both games will
+give feedback upon completion. <br>
+<img src="assets/images/feature3.PNG" alt="image of game1" width="750px">
+<img src="assets/images/feature4.PNG" alt="image of game2" width="750px" style="clear:both;display:block;">
+<img src="assets/images/feature7.PNG" alt="image of game1 results" width="350px" style="display:inline-block;margin-right:5px;margin-top:10px;">
+<img src="assets/images/feature8.PNG" alt="image of game1 results" width="350px" style="display:inline-block;margin-left:5px;margin-top:10px;">
 - Fixed navigation bar on mobile for easy navigation.
-- Results button gives feedback for both game 1 and game 2.
+- Results button on my-memory gives feedback for both game 1 and game 2.<br>
+<img src="assets/images/feature2.PNG" alt="image of overall results box" width="350px" style="display:inline-block;">
+<img src="assets/images/feature9.PNG" alt="image of overall results box" width="350px" style="display:inline-block;">
+- Google Map has clusters to avoid clutter and unique infowindows for each map.<br>
+<img src="assets/images/feature5.PNG" alt="image of zoomed out map showing clusters" width="400px" height="500px" style="display:inline-block;margin:20px 20px;">
+<img src="assets/images/feature6.PNG" alt="image of zoomed in map showing infobox" width="300px" style="display:inline-block;margin-bottom:150px;">
+- On index and support page JS has been used to show and hide content for a cleaner look.<br>
+<img src="assets/images/feature1.PNG" alt="image of index page animations" width="750px">
 
 ### **Differences from wireframes**
 - I initially wanted to have both games embedded on the memory games page but on desktop it meant the games had to be too small and could have lead to issues with users clicking between games so made both the games on 
 a seperate page and just linked to them from the memory games page.
 - I swapped the map and the support information on the support page as it is more intuitive to have information about support followed by locations that you can receive support. 
-
+- I added additonal navigation underneath the games to make it easier to move between games and the memory page. 
 ### **Features left to implement**
 - To add better 3-d effects to my buttons in game 2 and add a flattening animation when you click on the button to give a feeling of actually pressing a button. 
 - Add functionality for users to create a account on the site and then keep track of their scores over weeks to give a indication if memory is improving with regular practice. 
@@ -181,10 +203,11 @@ My inital attempt to add a reset button to the board by recalling the addBoardCo
 
 ## Deployment
 ---
+During development I used a remote server to locally deploy the site to observe changes uisng the command python3 -m http.server in the gitpod console. 
 The site is hosted usig GitHub and has been deployed directly from the master branch. The master branch was the only branch used for this website. I deployed the site by:
-1. On GitHuB navigating to my sites repositroy.
-2. Whilst in the seoncd-milestone-project repositroy click on settings.
-3. Scroll down until you come to the "source" drop-down menu and select master branch as the publishing source.
+1. On GitHuB navigating to my repositroy, JohnGC1510/milestone-project-2
+2. Whilst inside this repositroy click on the settings tab (which is the far right tab)
+3. Scroll down until you come to the "source" drop-down menu and select master branch as the publishing source - this provided me with a link to the deployed version.
 
 ## Credits
 ---
