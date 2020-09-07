@@ -25,6 +25,7 @@ function play() {
   colorsOrder = [];
   playerOrder = [];
   highlights = 0;
+  game = false;
   interval = 0;
   level = 1;
   $("#level").html(`Level: ${level}`);
@@ -92,6 +93,7 @@ function check() {
   }
   //if level is complete then prevent user interaction and allow computer to display colors. Run gameTurn every second
   else if (level == playerOrder.length) {
+    game = false;
     level++;
     playerOrder = [];
     displayColors = true;
