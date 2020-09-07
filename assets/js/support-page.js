@@ -1,4 +1,4 @@
-$(".support-heading").on("click", function () {
+m$(".support-heading").on("click", function () {
   $(".support-heading").siblings().slideUp("slow");
   $(this).siblings().slideDown("slow");
 
@@ -97,8 +97,22 @@ function initMap() {
     });
   });
 
+  for(let i = 0; i < markers.length; i++)
+  {
+  markers[i].addListener('click', function(){
+      infowindow.open(map, markers[i]);
+  })
+  }
   var markerCluster = new MarkerClusterer(map, markers, {
     imagePath:
       "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
   });
+
+    var infoContent = '<div style="max-width:150px;">This is a location you can travel to recive additonal support with dementia</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+    content: infoContent
+});
+
 }
+
