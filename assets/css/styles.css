@@ -147,9 +147,11 @@ nav ul li a:hover:active {
     cursor:pointer;
 }
 
-.info-title-container i {
+.info-item .info-title-container i{
   color: #9bd7f0;
-  padding-left: 25px;
+  float:right;
+  padding-right:10px;
+  padding-top:5px;
 }
 
 .info-title-container h3{
