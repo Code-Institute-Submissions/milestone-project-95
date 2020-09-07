@@ -39,6 +39,7 @@ function play() {
 
 function gameTurn() {
   game = false;
+  $(playButton).off("click");
   if (highlights == level) {
     //computer turn has finished as it has the correct number of buttons has been highlighted
     clearInterval(interval); //stop running GameTurn
@@ -106,6 +107,9 @@ function check() {
 function lose() {
   game = false;
   levelReached = level;
+  $(playButton).on("click", function () {
+  play();
+});
   sessionStorage.setItem("gameTwoScore", levelReached);
   setTimeout(function () {
     $("#game-two-modal").removeClass("hidden");
