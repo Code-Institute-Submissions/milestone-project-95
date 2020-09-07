@@ -1,4 +1,4 @@
-m$(".support-heading").on("click", function () {
+$(".support-heading").on("click", function () {
   $(".support-heading").siblings().slideUp("slow");
   $(this).siblings().slideDown("slow");
 
@@ -116,3 +116,4 @@ function initMap() {
 
 }
 
+console.log($(".support-img-item").height());
